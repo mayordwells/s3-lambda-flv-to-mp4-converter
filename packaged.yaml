@@ -9,13 +9,13 @@ Metadata:
     Author: Adewole Mayowa
     SpdxLicenseId: MIT
     LicenseUrl: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/be37126caac58eb035f6b8cce3ed9dc2
-    ReadmeUrl: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/9bb275f35fe6bce49c70002c13d60806
+    ReadmeUrl: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/a0a9040904a5f9513609d0557b25964a
     Labels:
     - s3
     - lambda
     - video-converter
     HomePageUrl: https://github.com/mayordwells/s3-lambda-flv-to-mp4-converter
-    SemanticVersion: 1.0.1
+    SemanticVersion: 1.0.2
     SourceCodeUrl: https://github.com/mayordwells/s3-lambda-flv-to-mp4-converter
 Parameters:
   ConversionTimeout:
@@ -73,7 +73,7 @@ Resources:
             Bucket:
               Ref: InputS3Bucket
             Events: s3:ObjectCreated:*
-      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/811abebc4dc305af655d523c288cbb20
+      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/00e24d2d6648d0e823b3c8d8169d4d83
   OutputS3Bucket:
     Type: AWS::S3::Bucket
     Properties:

@@ -8,5 +8,5 @@ s3_prefix = "s3-lamda-flv-to-mp4-converter"
 region = "eu-central-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "ConversionTimeout=\"300\" InputS3BucketName=\"mayowas-s3-lambda-ffmpeg-input-mov-bucket\" OutputS3BucketName=\"mayowas-s3-lambda-ffmpeg-output-mp4-bucket\""
+parameter_overrides = "ConversionTimeout=\"300\" InputS3BucketName=\"mayowas-s3-lambda-ffmpeg-input-mov-bucket\" AwsRegion=\"eu-central-1\" OutputS3BucketName=\"mayowas-s3-lambda-ffmpeg-output-mp4-bucket\" LayerArn=\"arn:aws:lambda:eu-central-1:949696328322:layer:ffmpeg:1\""
 

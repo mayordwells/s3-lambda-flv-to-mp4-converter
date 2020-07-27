@@ -2,6 +2,21 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: A serverless component for conversion from FLV to MP4
 Transform:
 - AWS::Serverless-2016-10-31
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: s3-lamda-flv-to-mp4-converter
+    Description: AWS S3 Lambda Video Converter
+    Author: Adewole Mayowa
+    SpdxLicenseId: MIT
+    LicenseUrl: ../../LICENSE.txt
+    ReadmeUrl: ../../README.md
+    Labels:
+    - s3
+    - lambda
+    - video converter
+    HomePageUrl: https://github.com/mayordwells/s3-lamda-flv-to-mp4-converter
+    SemanticVersion: 1.0.0
+    SourceCodeUrl: https://github.com/mayordwells/s3-lamda-flv-to-mp4-converter
 Parameters:
   ConversionTimeout:
     Type: Number

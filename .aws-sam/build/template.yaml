@@ -1,0 +1,75 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: A serverless component for conversion from FLV to MP4
+Transform:
+- AWS::Serverless-2016-10-31
+Parameters:
+  ConversionTimeout:
+    Type: Number
+    Default: 300
+  InputS3BucketName:
+    Type: String
+    Default: mayowas-s3-lambda-ffmpeg-input-mov-bucket
+    MinLength: 3
+  AwsRegion:
+    Type: String
+    Default: eu-central-1
+  OutputS3BucketName:
+    Type: String
+    Default: mayowas-s3-lambda-ffmpeg-output-mp4-bucket
+    MinLength: 3
+  LayerArn:
+    Type: String
+    Default: arn:aws:lambda:eu-central-1:949696328322:layer:ffmpeg:1
+Resources:
+  InputS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName:
+        Ref: InputS3BucketName
+  ConvertFileFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/index.handler
+      Timeout:
+        Ref: ConversionTimeout
+      MemorySize: 1024
+      Runtime: nodejs12.x
+      Layers:
+      - Ref: LayerArn
+      Policies:
+      - S3CrudPolicy:
+          BucketName:
+            Ref: OutputS3BucketName
+      - S3ReadPolicy:
+          BucketName:
+            Ref: InputS3BucketName
+      Environment:
+        Variables:
+          OUTPUT_BUCKET:
+            Ref: OutputS3Bucket
+          EXTENSION: .mp4
+          MIME_TYPE: video/mp4
+          REGION:
+            Ref: AwsRegion
+      Events:
+        FileUpload:
+          Type: S3
+          Properties:
+            Bucket:
+              Ref: InputS3Bucket
+            Events: s3:ObjectCreated:*
+      CodeUri: ConvertFileFunction
+  OutputS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName:
+        Ref: OutputS3BucketName
+Outputs:
+  InputS3Bucket:
+    Description: Input S3 bucket
+    Value:
+      Ref: InputS3Bucket
+  OutputS3Bucket:
+    Description: Output S3 bucket
+    Value:
+      Ref: OutputS3Bucket

@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "s3-lamda-flv-to-mp4-converter"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah"
+s3_prefix = "s3-lamda-flv-to-mp4-converter"
+region = "eu-central-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "ConversionTimeout=\"300\" InputS3BucketName=\"mayowas-s3-lambda-ffmpeg-input-mov-bucket\" AwsRegion=\"eu-central-1\" OutputS3BucketName=\"mayowas-s3-lambda-ffmpeg-output-mp4-bucket\" LayerArn=\"arn:aws:lambda:eu-central-1:949696328322:layer:ffmpeg:1\""
+

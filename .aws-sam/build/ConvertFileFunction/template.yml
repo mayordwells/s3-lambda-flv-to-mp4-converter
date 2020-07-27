@@ -15,7 +15,7 @@ Metadata:
     ReadmeUrl: README.md
     Labels: ['s3', 'lambda', 'video-converter']
     HomePageUrl: https://github.com/mayordwells/s3-lambda-flv-to-mp4-converter
-    SemanticVersion: 1.0.0
+    SemanticVersion: 1.0.1
     SourceCodeUrl: https://github.com/mayordwells/s3-lambda-flv-to-mp4-converter
 
 Parameters:

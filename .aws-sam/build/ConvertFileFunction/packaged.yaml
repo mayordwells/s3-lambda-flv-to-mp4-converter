@@ -73,7 +73,7 @@ Resources:
             Bucket:
               Ref: InputS3Bucket
             Events: s3:ObjectCreated:*
-      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/8b6fe83973f987d93c7bae3131bd02ef
+      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/b127342a856c1a93ffaa4623316301b6
   OutputS3Bucket:
     Type: AWS::S3::Bucket
     Properties:

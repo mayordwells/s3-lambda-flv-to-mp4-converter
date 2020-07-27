@@ -15,7 +15,7 @@ Metadata:
     - lambda
     - video-converter
     HomePageUrl: https://github.com/mayordwells/s3-lambda-flv-to-mp4-converter
-    SemanticVersion: 1.0.0
+    SemanticVersion: 1.0.1
     SourceCodeUrl: https://github.com/mayordwells/s3-lambda-flv-to-mp4-converter
 Parameters:
   ConversionTimeout:
@@ -73,7 +73,7 @@ Resources:
             Bucket:
               Ref: InputS3Bucket
             Events: s3:ObjectCreated:*
-      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/b127342a856c1a93ffaa4623316301b6
+      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1em8qocizdah/811abebc4dc305af655d523c288cbb20
   OutputS3Bucket:
     Type: AWS::S3::Bucket
     Properties:

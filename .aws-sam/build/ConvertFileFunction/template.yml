@@ -13,7 +13,7 @@ Metadata:
     SpdxLicenseId: MIT
     LicenseUrl: LICENSE.txt
     ReadmeUrl: README.md
-    Labels: ['s3', 'lambda', 'video converter']
+    Labels: ['s3', 'lambda', 'video-converter']
     HomePageUrl: https://github.com/mayordwells/s3-lamda-flv-to-mp4-converter
     SemanticVersion: 1.0.0
     SourceCodeUrl: https://github.com/mayordwells/s3-lamda-flv-to-mp4-converter
